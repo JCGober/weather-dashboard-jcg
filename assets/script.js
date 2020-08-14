@@ -14,8 +14,6 @@ var city = "Charlotte"
  
 var queryURL="https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=510c18f533b70331cb4fe3a2dca04f26"
 
-
-
 // Ajax code 
 
 $.ajax({
@@ -30,7 +28,9 @@ $.ajax({
 
         city = input.val()
 
-        queryURL="https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=510c18f533b70331cb4fe3a2dca04f26"
+        // Can't Get this stupid link(queryURL) to update when search button is hit.
+
+        queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=510c18f533b70331cb4fe3a2dca04f26"
 
         //Add Button
 
@@ -44,12 +44,6 @@ $.ajax({
         $("#tempCur").text("Temp: " + Math.round(((response.list[0].main.temp) - 273.15)*(1.8)+32))
         $("#humCur").text("Humidity: " + response.list[0].main.humidity)
         $("#windCur").text("Wind Speed: " + response.list[0].wind.speed)
-
-
-       
-       
-        console.log("Humidity: " + response.list[0].main.humidity)
-        console.log("Wind Speed: " + response.list[0].wind.speed)
 
         // for loop to run through and append forecasts 
         for(var i = 1; i<5; i++){
