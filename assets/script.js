@@ -16,9 +16,6 @@ var queryURL="https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&ap
 
 
 
-
-
-
 // Ajax code 
 
 $.ajax({
@@ -33,7 +30,7 @@ $.ajax({
 
         city = input.val()
 
-        queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=510c18f533b70331cb4fe3a2dca04f26"
+        queryURL="https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=510c18f533b70331cb4fe3a2dca04f26"
 
         //Add Button
 
