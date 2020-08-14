@@ -4,6 +4,7 @@ input{
 
 button{
     margin: 10px
+
 }
 
 div{
@@ -12,4 +13,9 @@ div{
 
 body{
     margin: 10px;
+    background-color: gainsboro;
+}
+
+.header{
+    background-color: ghostwhite;
 }
