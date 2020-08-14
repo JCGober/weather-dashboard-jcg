@@ -29,17 +29,16 @@ $.ajax({
         city = input.val()
 
         // Can't Get this stupid link(queryURL) to update when search button is hit.
-
         queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=510c18f533b70331cb4fe3a2dca04f26"
 
-        //Add Button
-
+        //Add Button for cities
         var newButton= $("<button>")
 
         newButton.html(city)
 
         cityButtonArea.append(newButton)
 
+        //current weather
         $("#cityCur").text("City: " + city)
         $("#tempCur").text("Temp: " + Math.round(((response.list[0].main.temp) - 273.15)*(1.8)+32))
         $("#humCur").text("Humidity: " + response.list[0].main.humidity)
