@@ -6,6 +6,8 @@ var input = $("#input")
 
 var cityButtonArea = $("#cityBtn")
 
+var displayCurrent = $("#displayCurrent")
+
 var city ="Charlotte"
 
 var queryURL="https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=510c18f533b70331cb4fe3a2dca04f26"
@@ -30,11 +32,24 @@ $.ajax({
 
         queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=510c18f533b70331cb4fe3a2dca04f26"
 
+        //Add Button
+
         var newButton= $("<button>")
 
         newButton.html(city)
 
         cityButtonArea.append(newButton)
+
+        $("#cityCur").text("City: " + city)
+        $("#tempCur").text("Temp: " + Math.round(((response.list[0].main.temp) - 273.15)*(1.8)+32))
+        $("#humCur").text("Humidity: " + response.list[0].main.humidity)
+        $("#windCur").text("Wind Speed: " + response.list[0].wind.speed)
+
+
+       
+       
+        console.log("Humidity: " + response.list[0].main.humidity)
+        console.log("Wind Speed: " + response.list[0].wind.speed)
 
 
         for(var i = 1; i<5; i++){
@@ -44,8 +59,6 @@ $.ajax({
             var humidity = response.list[i].main.humidity
     
             var windSpeed = response.list[i].wind.speed
-
-
     
             console.log(city)
             console.log("Temperature: " + tempF)
